@@ -1,0 +1,55 @@
+.policy {
+  max-width: 44rem;
+  padding: 3rem 0 5rem;
+}
+
+.policy__title {
+  margin: 0.5rem 0 1.5rem;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.policy__heading {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.3rem;
+}
+
+.policy__text,
+.policy__item {
+  color: var(--muted);
+}
+
+.policy__strong,
+.policy__code {
+  color: var(--ink);
+}
+
+.policy__code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.35rem;
+  background: var(--raised);
+  font-size: 0.9em;
+}
+
+.policy__back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.policy__back:hover {
+  text-decoration: underline;
+}
+
+.policy__meta {
+  margin: 0;
+  color: var(--teal);
+  font-size: 0.9rem;
+}
+
+.header__link--current {
+  color: var(--ink);
+}

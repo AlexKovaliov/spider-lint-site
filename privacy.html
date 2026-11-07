@@ -1,149 +1,155 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Spider Lint privacy policy</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --ink: #1b191e;
-        --paper: #f7f4ef;
-        --muted: #5c5863;
-        --rule: #d8d2c8;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --ink: #f4f1ea;
-          --paper: #16141a;
-          --muted: #b3adb8;
-          --rule: #3a3640;
-        }
-      }
-      body {
-        margin: 0 auto;
-        max-width: 40rem;
-        padding: 2rem 1.25rem 4rem;
-        background: var(--paper);
-        color: var(--ink);
-        font:
-          1rem/1.55 ui-sans-serif,
-          system-ui,
-          sans-serif;
-      }
-      h1,
-      h2 {
-        font-weight: 650;
-        line-height: 1.25;
-      }
-      h1 {
-        font-size: 1.75rem;
-      }
-      h2 {
-        margin-top: 2rem;
-        font-size: 1.15rem;
-      }
-      p,
-      li {
-        color: var(--ink);
-      }
-      .meta,
-      footer {
-        color: var(--muted);
-      }
-      a {
-        color: inherit;
-      }
-      hr {
-        border: 0;
-        border-top: 1px solid var(--rule);
-      }
-    </style>
+    <meta
+      name="description"
+      content="What the Spider Lint Chrome extension can see, what it stores on your device, and what it never sends anywhere."
+    />
+    <meta name="theme-color" content="#0c0b10" />
+    <link rel="canonical" href="https://alexkovaliov.github.io/spider-lint-site/privacy.html" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="./assets/brand/spider.png" />
+    <link rel="apple-touch-icon" href="./assets/brand/spider.png" />
+    <link rel="stylesheet" href="./assets/styles/privacy.css" />
+    <script src="./assets/scripts/top/scrollTop.js" defer></script>
   </head>
-  <body>
-    <p class="meta">Spider Lint · Privacy policy · 25 October 2026</p>
-    <h1>Privacy policy</h1>
-    <p>
-      Spider Lint is a Chrome extension that finds accessibility errors on the page you are looking
-      at. This page explains what it can see, what it stores, and what it never does.
-    </p>
+  <body class="page__body">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="header" aria-label="Spider Lint">
+      <div class="container header__inner">
+        <a class="header__brand" href="./index.html">
+          <img class="header__logo" src="./assets/brand/spider.png" width="32" height="32" alt="" />
+          Spider Lint
+        </a>
+        <nav class="header__nav" aria-label="Main">
+          <a class="header__link" href="./index.html#demo">Demo</a>
+          <a class="header__link" href="./index.html#features">Features</a>
+          <a class="header__link" href="./index.html#faq">FAQ</a>
+          <a class="header__link header__link--current" href="./privacy.html" aria-current="page"
+            >Privacy</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="container policy" aria-labelledby="policy-title">
+      <a class="policy__back" href="./index.html">← Back to Spider Lint</a>
+      <p class="policy__meta">Spider Lint · Privacy policy · 25 October 2026</p>
+      <h1 class="policy__title" id="policy-title">Privacy policy</h1>
+      <p class="policy__text">
+        Spider Lint is a Chrome extension that finds accessibility errors on the page you are
+        looking at. This page explains what it can see, what it stores, and what it never does.
+      </p>
 
-    <h2>Who this covers</h2>
-    <p>This policy is for the Spider Lint browser extension published by Aliaksandr Kavaliou.</p>
+      <h2 class="policy__heading">Who this covers</h2>
+      <p class="policy__text">
+        This policy is for the Spider Lint browser extension published by Aliaksandr Kavaliou.
+      </p>
 
-    <h2>What the extension can see</h2>
-    <p>
-      The extension runs only after you click its toolbar icon on a tab. It then injects a panel
-      into that tab and, when you press Check, reads the page to find accessibility issues. It does
-      not run on other tabs, and it does not run in the background on sites you visit.
-    </p>
-    <p>
-      If you take a screenshot of an issue, Chrome’s <code>captureVisibleTab</code> API captures the
-      visible tab. That image can include personal data that was already on the page. The panel
-      warns you about this before you use the shot.
-    </p>
+      <h2 class="policy__heading">What the extension can see</h2>
+      <p class="policy__text">
+        The extension runs only after you click its toolbar icon on a tab. It then injects a panel
+        into that tab and, when you press Check, reads the page to find accessibility issues. It
+        does not run on other tabs, and it does not run in the background on sites you visit.
+      </p>
+      <p class="policy__text">
+        If you take a screenshot of an issue, Chrome’s
+        <code class="policy__code">captureVisibleTab</code> API captures the visible tab. That image
+        can include personal data that was already on the page. The panel warns you about this
+        before you use the shot.
+      </p>
 
-    <h2>What is stored, and where</h2>
-    <p>
-      Everything the extension keeps is stored in Chrome’s local extension storage on your device:
-    </p>
-    <ul>
-      <li>settings (check level, spider on/off and speed, theme, auto-check options)</li>
-      <li>the list of issues you chose to ignore, grouped by site</li>
-    </ul>
-    <p>
-      Tickets you copy and screenshots you save go to your clipboard or downloads folder, not to us.
-      Closing a tab does not wipe settings. Uninstalling Spider Lint deletes the stored settings and
-      ignore list.
-    </p>
+      <h2 class="policy__heading" id="stored-title">What is stored, and where</h2>
+      <p class="policy__text">
+        Everything the extension keeps is stored in Chrome’s local extension storage on your device:
+      </p>
+      <ul class="policy__list" aria-labelledby="stored-title">
+        <li class="policy__item">
+          settings (check level, spider on/off and speed, theme, auto-check options)
+        </li>
+        <li class="policy__item">the list of issues you chose to ignore, grouped by site</li>
+      </ul>
+      <p class="policy__text">
+        Tickets you copy and screenshots you save go to your clipboard or downloads folder, not to
+        us. Closing a tab does not wipe settings. Uninstalling Spider Lint deletes the stored
+        settings and ignore list.
+      </p>
 
-    <h2>What we never collect</h2>
-    <p>
-      The extension does not send page contents, tickets, screenshots, or settings to us or to any
-      server. There are no accounts, analytics, advertising, or crash reports.
-    </p>
-    <p>
-      The check engine is bundled in the extension. It does not phone home. There is no remote code.
-    </p>
+      <h2 class="policy__heading">What we never collect</h2>
+      <p class="policy__text">
+        The extension does not send page contents, tickets, screenshots, or settings to us or to any
+        server. There are no accounts, analytics, advertising, or crash reports.
+      </p>
+      <p class="policy__text">
+        The check engine is bundled in the extension. It does not phone home. There is no remote
+        code.
+      </p>
 
-    <h2>Feedback forms</h2>
-    <p>
-      The settings page links to optional forms hosted by
-      <a href="https://tally.so">Tally</a> if you want to report a bug, suggest an improvement, or
-      send other comments. Those forms are not filled by the extension. If you open one, Tally’s own
-      privacy policy applies to whatever you type there. Nothing is sent from the extension itself.
-    </p>
+      <h2 class="policy__heading">Feedback forms</h2>
+      <p class="policy__text">
+        The settings page links to optional forms hosted by
+        <a class="policy__link" href="https://tally.so">Tally</a> if you want to report a bug,
+        suggest an improvement, or send other comments. Those forms are not filled by the extension.
+        If you open one, Tally’s own privacy policy applies to whatever you type there. Nothing is
+        sent from the extension itself.
+      </p>
 
-    <h2>Permissions</h2>
-    <ul>
-      <li>
-        <strong>activeTab</strong> — so the panel can run on the tab whose icon you clicked, and
-        only then.
-      </li>
-      <li><strong>scripting</strong> — to inject that panel and run the check on that tab.</li>
-      <li><strong>storage</strong> — to keep settings and ignored issues on this device.</li>
-    </ul>
-    <p>The production build does not request host permissions or access to every site.</p>
+      <h2 class="policy__heading" id="permissions-title">Permissions</h2>
+      <ul class="policy__list" aria-labelledby="permissions-title">
+        <li class="policy__item">
+          <strong class="policy__strong">activeTab</strong> — so the panel can run on the tab whose
+          icon you clicked, and only then.
+        </li>
+        <li class="policy__item">
+          <strong class="policy__strong">scripting</strong> — to inject that panel and run the check
+          on that tab.
+        </li>
+        <li class="policy__item">
+          <strong class="policy__strong">storage</strong> — to keep settings and ignored issues on
+          this device.
+        </li>
+      </ul>
+      <p class="policy__text">
+        The production build does not request host permissions or access to every site.
+      </p>
 
-    <h2>How to delete your data</h2>
-    <p>
-      Restore ignored issues from the settings page, or remove Spider Lint from
-      <code>chrome://extensions</code>. That deletes local settings and the ignore list. Anything
-      you already copied or downloaded stays on your device until you delete it yourself.
-    </p>
+      <h2 class="policy__heading">How to delete your data</h2>
+      <p class="policy__text">
+        Restore ignored issues from the settings page, or remove Spider Lint from
+        <code class="policy__code">chrome://extensions</code>. That deletes local settings and the
+        ignore list. Anything you already copied or downloaded stays on your device until you delete
+        it yourself.
+      </p>
 
-    <h2>Children</h2>
-    <p>The extension is not directed at children and does not knowingly collect data from them.</p>
+      <h2 class="policy__heading">Children</h2>
+      <p class="policy__text">
+        The extension is not directed at children and does not knowingly collect data from them.
+      </p>
 
-    <h2>Changes</h2>
-    <p>If this policy changes, the date at the top of this page will change.</p>
+      <h2 class="policy__heading">Changes</h2>
+      <p class="policy__text">
+        If this policy changes, the date at the top of this page will change.
+      </p>
 
-    <h2>Contact</h2>
-    <p>
-      Questions about this policy: use
-      <a href="https://tally.so/r/OQDpBK">Send feedback</a> from the settings page.
-    </p>
-    <hr />
-    <footer>© 2026 Aliaksandr Kavaliou</footer>
+      <h2 class="policy__heading">Contact</h2>
+      <p class="policy__text">
+        Questions about this policy: use
+        <a class="policy__link" href="https://tally.so/r/OQDpBK">Send feedback</a> from the settings
+        page.
+      </p>
+    </main>
+    <footer class="footer" aria-label="Site footer">
+      <div class="container footer__inner">
+        <span class="footer__copyright">© 2026 Aliaksandr Kavaliou</span>
+        <a class="footer__link" href="./index.html">Home</a>
+      </div>
+      <a class="to-top" href="#main" aria-label="Back to top">
+        <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </a>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,37 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+}
+
+.stage__glow {
+  position: absolute;
+  inset: -5rem -12rem -5rem -2rem;
+  z-index: -2;
+  background:
+    radial-gradient(closest-side, rgb(63 184 173 / 18%), transparent),
+    linear-gradient(rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 3rem 3rem,
+    linear-gradient(90deg, rgb(255 255 255 / 4%) 1px, transparent 1px) 0 0 / 3rem 3rem;
+  mask-image: radial-gradient(closest-side, black 60%, transparent);
+}
+
+.stage__web {
+  position: absolute;
+  top: -9rem;
+  left: 50%;
+  z-index: -1;
+  width: 40rem;
+  translate: -40% 0;
+  opacity: 0.22;
+  stroke: var(--muted);
+  fill: none;
+}
+
+@media (max-width: 60rem) {
+  .stage__glow {
+    inset: 0 -2rem;
+  }
+
+  .stage__web {
+    display: none;
+  }
+}

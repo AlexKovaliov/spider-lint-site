@@ -1,47 +1,417 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spider Lint</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --ink: #1b191e;
-        --paper: #f7f4ef;
-        --muted: #5c5863;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --ink: #f4f1ea;
-          --paper: #16141a;
-          --muted: #b3adb8;
-        }
-      }
-      body {
-        margin: 0 auto;
-        max-width: 36rem;
-        padding: 2rem 1.25rem;
-        background: var(--paper);
-        color: var(--ink);
-        font:
-          1rem/1.55 ui-sans-serif,
-          system-ui,
-          sans-serif;
-      }
-      a {
-        color: inherit;
-      }
-      p {
-        color: var(--muted);
-      }
-    </style>
+    <title>Spider Lint — Accessibility Checker for Chrome</title>
+    <meta
+      name="description"
+      content="A spider that finds accessibility errors on the page, explains how to fix them, and exports tickets. Nothing leaves your device."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexkovaliov.github.io/spider-lint-site/" />
+    <meta property="og:title" content="Spider Lint — Accessibility Checker" />
+    <meta
+      property="og:description"
+      content="A spider that finds accessibility errors on the page, explains how to fix them, and exports tickets. Nothing leaves your device."
+    />
+    <meta
+      property="og:image"
+      content="https://alexkovaliov.github.io/spider-lint-site/store/promo-marquee.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#0c0b10" />
+    <link rel="canonical" href="https://alexkovaliov.github.io/spider-lint-site/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="256x256" href="./assets/brand/spider.png" />
+    <link rel="apple-touch-icon" href="./assets/brand/spider.png" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <script src="./assets/scripts/page/enableJs.js"></script>
+    <script src="./assets/scripts/stage/drawWeb.js" defer></script>
+    <script src="./assets/scripts/sections/revealOnScroll.js" defer></script>
+    <script src="./assets/scripts/motion/reducedMotion.js" defer></script>
+    <script src="./assets/scripts/hero/gradientText.js" defer></script>
+    <script src="./assets/scripts/top/scrollTop.js" defer></script>
   </head>
-  <body>
-    <h1>Spider Lint</h1>
-    <p>A Chrome extension that finds accessibility errors on the page.</p>
-    <p>
-      <a href="./privacy.html">Privacy policy</a>
-    </p>
+
+  <body class="page__body">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="header" aria-label="Spider Lint">
+      <div class="container header__inner">
+        <a class="header__brand" href="./index.html">
+          <img class="header__logo" src="./assets/brand/spider.png" width="32" height="32" alt="" />
+          Spider Lint
+        </a>
+        <nav class="header__nav" aria-label="Main">
+          <a class="header__link" href="#demo">Demo</a>
+          <a class="header__link" href="#features">Features</a>
+          <a class="header__link" href="#faq">FAQ</a>
+          <a class="header__link" href="#privacy">Privacy</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" aria-label="About Spider Lint">
+      <section class="hero" aria-labelledby="title">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Chrome extension · WCAG 2.0 – 2.2</p>
+            <h1 class="hero__title" id="title">
+              A spider that hunts <span class="gradient-text">accessibility bugs</span>
+            </h1>
+            <p class="hero__lead">
+              Spider Lint walks to every failing element on the page, explains why it fails, and
+              hands you the fix: ready HTML, passing colors and a Markdown ticket.
+            </p>
+            <div class="hero__actions">
+              <a
+                class="button button--primary"
+                href="https://chromewebstore.google.com/detail/fmoocnhpmifjoagdphkcekhipcelmean"
+                >Add to Chrome — free</a
+              >
+              <a class="button" href="#demo">Watch it work</a>
+            </div>
+            <ul class="stats" aria-label="Key facts">
+              <li class="stats__item">
+                <strong class="stats__value">A to AAA</strong>
+                <span class="stats__label">every WCAG conformance level</span>
+              </li>
+              <li class="stats__item">
+                <strong class="stats__value">On click</strong>
+                <span class="stats__label">reads only the tab you scan</span>
+              </li>
+              <li class="stats__item">
+                <strong class="stats__value">0 bytes</strong>
+                <span class="stats__label">sent to any server</span>
+              </li>
+            </ul>
+          </div>
+          <div class="stage" aria-hidden="true">
+            <div class="stage__glow"></div>
+            <svg class="stage__web" viewBox="0 0 600 600"></svg>
+            <div class="scanner">
+              <div class="scanner__spider">
+                <img
+                  class="scanner__spider-image"
+                  src="./assets/brand/spider.png"
+                  width="80"
+                  height="80"
+                  alt=""
+                />
+              </div>
+              <div class="scanner__bar">
+                <i class="scanner__dot"></i>
+                <i class="scanner__dot"></i>
+                <i class="scanner__dot"></i>
+                <span class="scanner__address">coffee-shop.example</span>
+              </div>
+              <div class="scanner__page">
+                <div class="scanner__line scanner__line--short"></div>
+                <div class="scanner__image"></div>
+                <div class="scanner__line scanner__line--title"></div>
+                <div class="scanner__line scanner__line--faint scanner__line--wide"></div>
+                <div class="scanner__line scanner__line--faint scanner__line--medium"></div>
+                <div class="scanner__button"></div>
+                <div class="scanner__scan"></div>
+                <div class="marker marker--image">
+                  <span class="marker__label">Image has no alt text</span>
+                </div>
+                <div class="marker marker--text">
+                  <span class="marker__label marker__label--side">Contrast 1.4 : 1</span>
+                </div>
+                <div class="marker marker--button">
+                  <span class="marker__label">Button has no name</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="demo" aria-labelledby="demo-title">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">See it in action</p>
+            <h2 class="section__title" id="demo-title">Check, walk, fix</h2>
+            <p class="section__lead">
+              Press Check. The spider crawls to each issue, and the arrow keys take it further.
+            </p>
+          </div>
+          <div class="frame frame--wide reveal">
+            <video
+              class="frame__media"
+              aria-label="Spider Lint demo"
+              src="./store/demo.mp4"
+              poster="./store/screenshot-check.png"
+              width="1280"
+              height="800"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+            >
+              <track kind="captions" src="./store/demo.vtt" srclang="en" label="English" />
+              <a href="./store/demo.mp4">Download the demo video</a>
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">Features</p>
+            <h2 class="section__title" id="features-title">From an error to a fix in minutes</h2>
+          </div>
+          <article class="feature reveal">
+            <div class="feature__body">
+              <span class="feature__number" aria-hidden="true">01</span>
+              <h3 class="feature__title">Watch a spider find every issue</h3>
+              <p class="feature__text">
+                It highlights the failing element right on the page. Press the arrow keys to walk to
+                the next one, <kbd class="key">Esc</kbd> to close the panel.
+              </p>
+            </div>
+            <div class="frame">
+              <img
+                class="frame__media"
+                src="./store/screenshot-check.png"
+                width="1280"
+                height="800"
+                loading="lazy"
+                alt="The Spider Lint panel lists an issue while the spider sits on the failing element."
+              />
+            </div>
+          </article>
+          <article class="feature feature--reversed reveal">
+            <div class="feature__body">
+              <span class="feature__number" aria-hidden="true">02</span>
+              <h3 class="feature__title">Get a fix, not just an error</h3>
+              <p class="feature__text">
+                Each issue comes with a plain explanation, suggested HTML to copy, and text and
+                background colors that pass contrast.
+              </p>
+            </div>
+            <div class="frame">
+              <img
+                class="frame__media"
+                src="./store/screenshot-fix.png"
+                width="1280"
+                height="800"
+                loading="lazy"
+                alt="Suggested HTML that adds the missing alt attribute, with Copy HTML buttons."
+              />
+            </div>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__body">
+              <span class="feature__number" aria-hidden="true">03</span>
+              <h3 class="feature__title">Export tickets with screenshots</h3>
+              <p class="feature__text">
+                Copy a Markdown ticket for the current issue with a cropped screenshot, or download
+                one report for the whole page.
+              </p>
+            </div>
+            <div class="frame">
+              <img
+                class="frame__media"
+                src="./store/screenshot-export.png"
+                width="1280"
+                height="800"
+                loading="lazy"
+                alt="The Actions menu with Copy as ticket, Screenshot and Download report."
+              />
+            </div>
+          </article>
+          <article class="feature feature--reversed reveal">
+            <div class="feature__body">
+              <span class="feature__number" aria-hidden="true">04</span>
+              <h3 class="feature__title">Make your site work without a mouse</h3>
+              <p class="feature__text">
+                The Tab order view numbers every stop, draws the keyboard route, and finds focus
+                that jumps backward, stops without a name and stops that stay hidden.
+              </p>
+            </div>
+            <div class="frame">
+              <img
+                class="frame__media"
+                src="./store/screenshot-tab-order.png"
+                width="1280"
+                height="800"
+                loading="lazy"
+                alt="Numbered tab stops drawn over the page with the route between them."
+              />
+            </div>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__body">
+              <span class="feature__number" aria-hidden="true">05</span>
+              <h3 class="feature__title">Hear your page like a screen reader</h3>
+              <p class="feature__text">
+                The Screen reader view lists landmarks, headings, links and controls in reading
+                order with what a screen reader says, speaks them out loud, and flags missing names,
+                skipped headings and content outside landmarks.
+              </p>
+            </div>
+            <div class="frame">
+              <img
+                class="frame__media"
+                src="./store/screenshot-screen-reader.png"
+                width="1280"
+                height="800"
+                loading="lazy"
+                alt="The Screen reader view filtered to items that need attention, with a button that has no name."
+              />
+            </div>
+          </article>
+          <ul class="cards" aria-label="More features">
+            <li class="card reveal">
+              <h3 class="card__title">Scan line</h3>
+              <p class="card__text">
+                A line sweeps down the page while the check runs, so you see it working.
+              </p>
+            </li>
+            <li class="card reveal">
+              <h3 class="card__title">WCAG 2.0, 2.1, 2.2</h3>
+              <p class="card__text">Level A, AA, or AA and AAA with best practices.</p>
+            </li>
+            <li class="card reveal">
+              <h3 class="card__title">Dock or float</h3>
+              <p class="card__text">
+                Drag and pin the panel, or dock it to any edge and move the page aside.
+              </p>
+            </li>
+            <li class="card reveal">
+              <h3 class="card__title">Single-page apps</h3>
+              <p class="card__text">
+                Re-checks after a route change. Check in 3 s catches menus and dialogs.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="privacy" aria-labelledby="privacy-title">
+        <div class="container">
+          <div class="privacy reveal">
+            <p class="section__kicker">Privacy</p>
+            <h2 class="section__title" id="privacy-title">Nothing leaves your device</h2>
+            <p class="privacy__text">
+              The script runs only on the tab whose icon you clicked. No accounts, no ads, no
+              analytics. Settings and the ignore list stay in Chrome’s local storage.
+            </p>
+            <ul class="chips" aria-label="Permissions">
+              <li class="chips__item">activeTab</li>
+              <li class="chips__item">scripting</li>
+              <li class="chips__item">storage</li>
+            </ul>
+            <a class="button" href="./privacy.html">Read the privacy policy</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="start" aria-labelledby="start-title">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">Get started</p>
+            <h2 class="section__title" id="start-title">Your first check in three steps</h2>
+          </div>
+          <ol class="steps" aria-labelledby="start-title">
+            <li class="steps__item reveal">
+              <h3 class="steps__title">Install</h3>
+              <p class="steps__text">
+                Add Spider Lint from the Chrome Web Store and pin it to the toolbar.
+              </p>
+            </li>
+            <li class="steps__item reveal">
+              <h3 class="steps__title">Open a page</h3>
+              <p class="steps__text">
+                Any site works, including localhost, staging and pages behind a login.
+              </p>
+            </li>
+            <li class="steps__item reveal">
+              <h3 class="steps__title">Press Check</h3>
+              <p class="steps__text">
+                Click the spider icon, then Check. The spider walks to the first issue.
+              </p>
+            </li>
+          </ol>
+          <div class="steps__action reveal">
+            <a
+              class="button button--primary"
+              href="https://chromewebstore.google.com/detail/fmoocnhpmifjoagdphkcekhipcelmean"
+              >Add to Chrome — free</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="section__kicker">FAQ</p>
+            <h2 class="section__title" id="faq-title">Questions and answers</h2>
+          </div>
+          <div class="faq reveal">
+            <details class="faq__item">
+              <summary class="faq__question">
+                How is it different from axe DevTools or Lighthouse?
+              </summary>
+              <p class="faq__answer">
+                Spider Lint runs the same axe-core engine, then shows each issue right on the page,
+                suggests ready HTML and passing colors, and exports Markdown tickets. It also adds
+                the Tab order and Screen reader views.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Does it check the whole site?</summary>
+              <p class="faq__answer">
+                It checks the page open in the current tab. On a single-page app, check again after
+                a route change.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Will it find every accessibility problem?</summary>
+              <p class="faq__answer">
+                No automated tool can. Spider Lint finds the issues a machine can prove. Test with a
+                keyboard and a screen reader too: the Tab order and Screen reader views help there.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Which browsers does it support?</summary>
+              <p class="faq__answer">
+                Chrome. Edge, Brave and other Chromium browsers can install it from the Chrome Web
+                Store too.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Why does it not run on some pages?</summary>
+              <p class="faq__answer">
+                Chrome does not let extensions into <code>chrome://</code> pages, the Web Store or
+                PDFs. The toolbar icon shows the reason.
+              </p>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Is it free?</summary>
+              <p class="faq__answer">Yes. No accounts, no ads and no paid plan.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" aria-label="Site footer">
+      <div class="container footer__inner">
+        <span class="footer__copyright">© 2026 Aliaksandr Kavaliou</span>
+        <a class="footer__link" href="./privacy.html">Privacy policy</a>
+      </div>
+      <a class="to-top" href="#main" aria-label="Back to top">
+        <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </a>
+    </footer>
   </body>
 </html>

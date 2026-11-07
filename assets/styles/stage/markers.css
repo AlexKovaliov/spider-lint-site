@@ -1,0 +1,102 @@
+.marker {
+  position: absolute;
+}
+
+.marker::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--red);
+  border-radius: 0.6rem;
+  box-shadow: 0 0 1.25rem rgb(240 123 126 / 45%);
+  opacity: 0;
+  animation: mark 9s ease infinite;
+  animation-delay: inherit;
+}
+
+.marker__label {
+  position: absolute;
+  top: -1.9rem;
+  clip-path: inset(0 100% 0 0);
+  animation: label 9s ease infinite;
+  animation-delay: inherit;
+  left: -2px;
+  padding: 0.15rem 0.55rem;
+  border-radius: 0.4rem;
+  background: var(--red);
+  color: var(--night);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.marker--image {
+  inset: 2.85rem 1.2rem auto;
+  height: 9.1rem;
+  animation-delay: 1.2s;
+}
+
+.marker--text {
+  top: 14.25rem;
+  left: 1.2rem;
+  width: 62%;
+  height: 3rem;
+  animation-delay: 2.6s;
+}
+
+.marker--button {
+  bottom: 1.2rem;
+  left: 1.2rem;
+  width: 8.6rem;
+  height: 3rem;
+  animation-delay: 4s;
+}
+
+@keyframes mark {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  6%,
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes label {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  6%,
+  80% {
+    clip-path: inset(0);
+  }
+  90%,
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.marker__label--side {
+  top: 50%;
+  left: calc(100% + 0.6rem);
+  transform: translateY(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker::before {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .marker__label {
+    animation: none;
+    clip-path: inset(0);
+  }
+}

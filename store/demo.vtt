@@ -1,0 +1,57 @@
+WEBVTT
+
+00:00:04.618 --> 00:00:06.423
+One click to check
+Spider Lint runs WCAG rules right in your tab.
+
+00:00:10.393 --> 00:00:14.376
+The spider runs to every issue
+Next and Back walk it from one failing element to another.
+
+00:00:16.554 --> 00:00:18.167
+A fix you can paste
+Suggested HTML shows exactly how to repair the element.
+
+00:00:19.963 --> 00:00:21.579
+Colors that pass
+Low contrast? Get the nearest text or background color that meets WCAG.
+
+00:00:23.133 --> 00:00:24.949
+Ticket, screenshot or report
+A Markdown ticket for Jira or GitHub, a cropped screenshot, or one report for the page.
+
+00:00:28.772 --> 00:00:30.986
+Walk the Tab order
+Every element the Tab key reaches gets a number on the page, in keyboard order.
+
+00:00:39.263 --> 00:00:41.673
+Hear it like a screen reader
+Landmarks, headings, links and controls in reading order, with what a screen reader says.
+
+00:00:46.779 --> 00:00:48.988
+Catch what gets in the way
+Missing names, skipped headings and content outside landmarks, each with a fix.
+
+00:00:51.169 --> 00:00:55.310
+WCAG 2.0, 2.1 or 2.2
+Each version adds its success criteria on top of the ones before.
+
+00:00:55.358 --> 00:00:58.212
+All the way to AAA
+From the basics to the strictest criteria, plus best practices.
+
+00:00:58.268 --> 00:01:02.398
+Fast spider, dark theme
+Every option shows a live preview before you pick it.
+
+00:01:02.937 --> 00:01:04.146
+Dock it to any edge
+Float the panel, or dock it so the page moves aside.
+
+00:01:05.734 --> 00:01:09.869
+The page makes room
+Docked on the right, the panel never covers what you are checking.
+
+00:01:09.911 --> 00:01:11.731
+Settings apply instantly
+Change the rules or the layout and the open panel follows, checking again.

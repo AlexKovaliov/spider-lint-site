@@ -1,0 +1,144 @@
+.scanner {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow:
+    0 2rem 5rem rgb(0 0 0 / 55%),
+    0 0 0 1px rgb(255 255 255 / 3%) inset;
+}
+
+.scanner__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.scanner__dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.scanner__address {
+  flex: 1;
+  margin-left: 0.75rem;
+  margin-right: 8.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--night);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.scanner__page {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.scanner__line {
+  height: 0.75rem;
+  border-radius: 0.4rem;
+  background: var(--line);
+}
+
+.scanner__image {
+  height: 8.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #3a2a20, #6b4a32 60%, #2a1f18);
+}
+
+.scanner__line--title {
+  width: 70%;
+  height: 1.1rem;
+  background: var(--muted);
+}
+
+.scanner__line--faint {
+  background: #24212a;
+}
+
+.scanner__line--short {
+  width: 40%;
+}
+
+.scanner__line--wide {
+  width: 58%;
+}
+
+.scanner__line--medium {
+  width: 46%;
+}
+
+.scanner__button {
+  width: 8rem;
+  height: 2.4rem;
+  border-radius: 0.6rem;
+  background: var(--blue);
+}
+
+.scanner__scan {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4rem;
+  background: linear-gradient(transparent, rgb(102 188 126 / 22%));
+  border-bottom: 2px solid var(--green);
+  animation: scan 9s linear infinite;
+}
+
+.scanner__spider {
+  position: absolute;
+  top: -5rem;
+  right: 2.5rem;
+  display: grid;
+  justify-items: center;
+  animation: dangle 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.scanner__spider::before {
+  content: '';
+  width: 1px;
+  height: 7rem;
+  background: linear-gradient(transparent, var(--muted));
+}
+
+.scanner__spider-image {
+  width: 5rem;
+  margin-top: -1.1rem;
+  transform: rotate(180deg);
+  filter: drop-shadow(0 0.5rem 1rem rgb(0 0 0 / 60%));
+}
+
+@keyframes scan {
+  0% {
+    opacity: 0;
+    transform: none;
+  }
+  8% {
+    opacity: 1;
+  }
+  60%,
+  100% {
+    transform: translateY(22rem);
+  }
+}
+
+@keyframes dangle {
+  50% {
+    transform: translateY(1.25rem) rotate(2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanner__scan,
+  .scanner__spider {
+    animation: none;
+  }
+}
